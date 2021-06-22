@@ -30,7 +30,26 @@
   font-size: 2rem;
   color: #33ff33;
 }
-.container {
+.decrypt,
+.encode {
+  font-size: 2rem;
+  color: #33ff33;
+  cursor: pointer;
+}
+.decrypt {
+  margin-left: auto;
+}
+.decrypt:hover,
+.encode:hover {
+  color: green;
+}
+.encode::before {
+  content: "<";
+}
+.decrypt::after {
+  content: ">";
+}
+.full-content {
   width: 100vw;
   height: 100vh;
 }

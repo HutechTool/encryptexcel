@@ -15,9 +15,9 @@
 }
 
 .bg-main {
-  background-image: url(assets/hero.png);
-  background-position: right bottom;
-  background-size: contain;
+  background-image: url(assets/icon.png);
+  background-position: right;
+  background-size: 600px;
 }
 
 .heading-text {
@@ -27,7 +27,7 @@
   color: green;
 }
 .sub-text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #33ff33;
 }
 .decrypt,

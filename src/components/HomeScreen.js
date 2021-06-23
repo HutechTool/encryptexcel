@@ -15,7 +15,7 @@ export default function HomeScreen() {
     <section>
       <div className="bg-holder bg-main"></div>
       <div className="container d-flex align-items-center full mt-5">
-        <div className="col-md-6 col-lg-5 full mt-3">
+        <div className="col-md-7 col-lg-6 full mt-3">
           {status === "encode" ? (
             <div className="row">
               <p className="mb-2 decrypt" onClick={togleStatus}>

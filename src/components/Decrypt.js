@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 
 import decrypt from "../handleFile/decrypt";
 import exportToExcel from "../handleFile/exportFile";
@@ -36,21 +36,27 @@ export default function Decrypt() {
   };
   return (
     <>
-      <h1 className="mb-4 heading-text">Giải mã file&nbsp;excel</h1>
-      <p className="mb-1 sub-text">Mời chọn file cần giải mã</p>
-      <Form.Control
-        type="file"
-        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-        onChange={handleCrypted}
-        className="mb-5 btn btn btn-light"
-      />
-      <p className="mb-1 sub-text">Mời chọn file giải mã</p>
-      <Form.Control
-        type="file"
-        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-        onChange={handleCypher}
-        className="mb-5 btn btn-light"
-      />
+      <Row className="mb-3">
+        <h1 className="mb-4 heading-text">Giải mã file&nbsp;excel</h1>
+        <Col>
+          <p className="mb-1 sub-text">Chọn file cần giải mã</p>
+          <Form.Control
+            type="file"
+            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+            onChange={handleCrypted}
+            className="btn btn btn-light"
+          />
+        </Col>
+        <Col>
+          <p className="mb-1 sub-text">Chọn file giải mã</p>
+          <Form.Control
+            type="file"
+            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+            onChange={handleCypher}
+            className="btn btn-light"
+          />
+        </Col>
+      </Row>
       {fileCrypted && fileCypher && (
         <Button variant="success" onClick={handleClick}>
           Tải file được giải mã

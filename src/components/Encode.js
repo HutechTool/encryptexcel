@@ -1,6 +1,6 @@
 import React from "react";
-
 import { Form, Button } from "react-bootstrap";
+
 import encrypt from "../handleFile/encrypt";
 import getFilePromise from "../promise/getFilePromise";
 import exportToExcel from "../handleFile/exportFile";
@@ -19,7 +19,7 @@ export default function Encode() {
   return (
     <>
       <h1 className="mb-4 heading-text">Mã hóa file&nbsp;excel</h1>
-      <p className="mb-1 sub-text">Mời chọn file cần mã hóa</p>
+      <p className="mb-1 sub-text">Chọn file cần mã hóa</p>
       <Form.Control
         type="file"
         accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
@@ -32,7 +32,7 @@ export default function Encode() {
             className="mr-3"
             variant="success"
             onClick={() => {
-              exportToExcel(resEncrypt.encrypted, "FileMaHoa");
+              exportToExcel(resEncrypt.encrypted, "FileDaMaHoa");
             }}
           >
             Tải file mã hóa

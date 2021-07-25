@@ -1,5 +1,4 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
 
 import encrypt from "../handleFile/encrypt";
 import getFilePromise from "../promise/getFilePromise";
@@ -18,33 +17,34 @@ export default function Encode() {
   };
   return (
     <>
-      <h1 className="mb-4 heading-text">Mã hóa file&nbsp;excel</h1>
-      <p className="mb-1 sub-text">Chọn file cần mã hóa</p>
-      <Form.Control
-        type="file"
-        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-        onChange={handleFile}
-        className="mb-5 btn btn-light"
-      />
+      <div className="mb-4">
+        <h1 className="mb-4 heading-text">Mã hóa file&nbsp;excel</h1>
+        <p className="mb-1 sub-text text-left">Chọn file cần mã hóa</p>
+        <input
+          type="file"
+          accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+          onChange={handleFile}
+          className="mb-3 btn btn-success"
+        />
+      </div>
       {resEncrypt && (
         <>
-          <Button
-            className="mr-3"
-            variant="success"
+          <button
+            className="mr-3 btn btn-success"
             onClick={() => {
               exportToExcel(resEncrypt.encrypted, "FileDaMaHoa");
             }}
           >
             Tải file mã hóa
-          </Button>
-          <Button
-            variant="success"
+          </button>
+          <button
+            className="btn btn-success"
             onClick={() => {
               exportToExcel(resEncrypt.cipher, "FileGiaiMa");
             }}
           >
             Tải file giải hóa
-          </Button>
+          </button>
         </>
       )}
     </>

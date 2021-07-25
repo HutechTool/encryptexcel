@@ -1,5 +1,4 @@
 import React from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
 
 import decrypt from "../handleFile/decrypt";
 import exportToExcel from "../handleFile/exportFile";
@@ -29,38 +28,35 @@ export default function Decrypt() {
       return alert("Vui lòng chọn cả 2 file!");
     }
     const decrypted = decrypt(fileCrypted, fileCypher);
-    // if (decrypted == null) {
-    //   return alert("Không mã hóa được file");
-    // }
     exportToExcel(decrypted, "FileDaGiaiMa");
   };
   return (
     <>
-      <Row className="mb-3">
+      <div className="row mb-3">
         <h1 className="mb-4 heading-text">Giải mã file&nbsp;excel</h1>
-        <Col>
-          <p className="mb-1 sub-text">Chọn file cần giải mã</p>
-          <Form.Control
+        <div className="mb-3">
+          <p className="mb-1 sub-text text-left">Chọn file cần giải mã</p>
+          <input
             type="file"
             accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
             onChange={handleCrypted}
-            className="btn btn btn-light"
+            className="btn btn btn-success"
           />
-        </Col>
-        <Col>
-          <p className="mb-1 sub-text">Chọn file giải mã</p>
-          <Form.Control
+        </div>
+        <div className="">
+          <p className="mb-1 sub-text text-left">Chọn file giải mã</p>
+          <input
             type="file"
             accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
             onChange={handleCypher}
-            className="btn btn-light"
+            className="btn btn-success"
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
       {fileCrypted && fileCypher && (
-        <Button variant="success" onClick={handleClick}>
+        <button className="btn btn-success" onClick={handleClick}>
           Tải file được giải mã
-        </Button>
+        </button>
       )}
     </>
   );
